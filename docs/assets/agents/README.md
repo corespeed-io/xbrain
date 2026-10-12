@@ -17,10 +17,10 @@ separate from the icon files' copyright license.
 
 The original sourced SVGs remain unchanged. The `claude-code-mono` and
 `openclaw-mono` light/dark variants preserve the source geometry and replace
-colors with black and white; the OpenClaw eye contrast is retained. All variants are selected with static `picture` elements.
-The README shows these marks as images only, without launch links or action
-indicators. Visible labels are omitted; descriptive image alt text retains
-the Agent identity.
+colors with black and white; the OpenClaw eye contrast is retained. The README
+selects light and dark variants with static `picture` elements. It shows these
+marks as images only, without launch links or action indicators. Visible labels
+are omitted; descriptive image alt text retains the Agent identity.
 
 Product names and marks belong to their respective owners. Their use does not
 imply partnership, certification, or endorsement. The Xbrain MIT license does

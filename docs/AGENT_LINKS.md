@@ -1,14 +1,17 @@
 # README presentation and language selection
 
 The root `README.md` is English. Explicit links select Chinese (`README.zh-CN.md`),
-Japanese (`README.ja.md`) and Korean (`README.ko.md`). `README.en.md` retains the
+Japanese (`README.ja.md`) and Korean (`README.ko.md`). `README.en.md` keeps the
 same English content so existing links continue to work.
 
-Each version starts with a one-line installation and bookmark-sync prompt that
-points to the main branch's `SKILL.md`. GitHub provides the normal code-block copy
-control. The Agent marks below are static images with accessible alt text and
-light/dark variants; there are no Agent launch links, custom copy controls, or
-redirect pages.
+Each version starts with a one-line prompt. It points to the main branch's
+`SKILL.md` and asks the Agent to install Xbrain and organize the user's
+authorized design references. GitHub provides the normal code-block copy control.
+
+The Agent marks are static images with accessible alt text. Each mark uses a
+static `picture` element to select its light or dark variant. There are no Agent
+launch links, custom copy controls or redirect pages. The marks do not claim
+that an Agent was tested end to end.
 
 [GitHub's README documentation](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes)
 describes automatic README discovery by location: `.github`, root, then `docs`.
