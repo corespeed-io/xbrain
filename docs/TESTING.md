@@ -35,7 +35,12 @@ Use an isolated loopback server with an explicit private `BOOKMARK_STORE` and
 synthetic records for screenshots. Verify desktop and mobile-sized layouts,
 search/topic/favorite filtering, list/grid, no-result recovery, keyboard focus,
 import errors and duplicates, detail cancel/save, export/download, refresh and
-sample/library separation. Images must remain absent until session-only opt-in.
+sample/library separation. Memory Gallery images load by default; verify its off/on
+preference survives refresh. Graph and legacy detail images must remain absent
+until per-selection opt-in. With 150+ synthetic memory records, verify paging and
+search reach beyond the first 100 and opening those records in Graph preserves their IDs.
+Check static preview with a 200 HTML response for absent APIs and ensure actual
+API errors never silently switch storage.
 
 Follow [CLEAN_AGENT_ACCEPTANCE.md](CLEAN_AGENT_ACCEPTANCE.md) in a fresh agent
 context against an isolated server for authorized live-import acceptance. Compare
@@ -50,3 +55,23 @@ Back up the user's library (private permissions), verify its hash, and test agai
 a private COPY. Source updates and reads must not rewrite the original store.
 Default datastore paths still resolve from the project root, not the shell cwd or
 `.build/`. No migration script resets or upgrades the data schema.
+
+
+## Design-reference acceptance
+
+`tests/design.test.mjs` uses only fictional records to check evidence validation,
+revision conflicts, stable IDs, cross-domain retrieval, stale-analysis exclusion,
+optional personal file-provider round trips, graph bounds and local HTTP origin
+checks. `tests/client/design.test.tsx` covers keyboard selection, per-selection
+image opt-in, broken-image feedback, filtering and zoom.
+
+For an isolated preview, choose a new private temporary directory and an unused
+loopback port. Import `examples/design-resources.json` into that directory using
+`memory.mjs put --store FILE`, then start with explicit `MEMORY_STORE`,
+`BOOKMARK_STORE` (a different temporary path), and `PORT`. Open `/?view=graph`.
+The fixture's image URLs and visual claims are fictional; this tests the data
+workflow and UI, not real model vision accuracy. Never point this demo at an
+existing personal store. Verify a shared style reveals both source-specific
+explanations, domain filtering excludes other categories, missing-image resources
+have no style edges, images stay unloaded until selected, and mobile page width
+does not overflow (the graph itself scrolls horizontally).

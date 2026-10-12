@@ -23,6 +23,6 @@ indicators. Visible labels are omitted; descriptive image alt text retains
 the Agent identity.
 
 Product names and marks belong to their respective owners. Their use does not
-imply partnership, certification, or endorsement. The xrecall MIT license does
+imply partnership, certification, or endorsement. The Xbrain MIT license does
 **not** relicense these third-party marks. CoreSpeed's collection is the asset
 source, not a claim that the product owners endorse this project.
